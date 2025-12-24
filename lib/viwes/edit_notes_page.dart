@@ -24,19 +24,21 @@ class EidtNotesPage extends StatelessWidget {
           ),
         ),
       ),
-      body: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.5,
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: [
-              SizedBox(height: 25),
-              CustomTextBox(text: 'Enter your title'),
-              SizedBox(height: 15),
-              CustomTextBox(text: 'Enter your description', line: 7),
-              SizedBox(height: 80),
-              CustomButton(text: 'Save Note', onPressed: () {})
-            ],
+      body: SingleChildScrollView(
+        child: SizedBox(
+          
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: [
+                SizedBox(height: 25),
+                CustomTextBox(text: 'Enter your title'),
+                SizedBox(height: 15),
+                CustomTextBox(text: 'Enter your description', line: 7),
+                SizedBox(height: 80),
+                CustomButton(text: 'Save Note', onPressed: () {})
+              ],
+            ),
           ),
         ),
       ),
