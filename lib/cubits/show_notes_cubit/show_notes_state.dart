@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/models/notes_model.dart';
 
-
 @immutable
 abstract class NotesState {}
 

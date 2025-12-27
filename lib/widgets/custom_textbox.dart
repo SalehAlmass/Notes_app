@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 
 class CustomTextBox extends StatelessWidget {
   const CustomTextBox({
-    super.key, required this.text, this.line, this.onsaved,
+    super.key, required this.text, this.line, this.onsaved, this.textStyle,
   });
   final String text;
   final int? line;
+ final TextStyle? textStyle;
   final void Function(String?)? onsaved;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: textStyle,     
       onSaved: onsaved,
       validator: (value) {
         if (value == null || value.isEmpty) {

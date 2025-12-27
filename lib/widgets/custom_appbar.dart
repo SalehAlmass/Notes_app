@@ -3,17 +3,28 @@ import 'package:flutter/material.dart';
 class CustomAppbar extends StatelessWidget {
   final String title;
   final IconButton? icon;
+  final List<Widget>? actions;
+  final Color? backgroundColor;
+  final Color? titleColor;
   const CustomAppbar({
-    super.key, required this.title, this.icon,
+    super.key, required this.title, this.icon, this.actions, this.backgroundColor, this.titleColor,
   });
 
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: backgroundColor, 
       leading: icon,
-      title: Text(title),
-      actions: [
+      titleTextStyle: TextStyle(color: titleColor),
+      title: Center(
+        child: Text(title , style: TextStyle(
+        fontSize: 25,
+        fontWeight: FontWeight.bold,
+        ) ,
+        ),
+      ),
+      actions: actions ?? [
         Container(
           margin: EdgeInsets.only(right: 10, top: 5),
           height: 40,
